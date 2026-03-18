@@ -23,25 +23,10 @@ r = g = b = xpos = ypos = 0
 
 #function to calculate minimum distance from all colors and get the most matching color
 def get_color_name(R,G,B):
-	minimum = 1000
-	for i in range(len(df)):
-		d = abs(R - int(df.loc[i,'R'])) + abs(G - int(df.loc[i,'G'])) + abs(B - int(df.loc[i,'B']))
-		if d <= minimum:
-			minimum = d
-			cname = df.loc[i, 'color_name']
-
 	return cname
 
 #function to get x,y coordinates of mouse double click
 def draw_function(event, x, y, flags, params):
-	if event == cv2.EVENT_LBUTTONDBLCLK:
-		global b, g, r, xpos, ypos, clicked
-		clicked = True
-		xpos = x
-		ypos = y
-		b,g,r = img[y,x]
-		b = int(b)
-		g = int(g)
 		r = int(r)
 
 # creating window
